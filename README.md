@@ -1,0 +1,2 @@
+# text-generator
+Python program where user provides a text file that can be used to create a snippet of text based on the file's structure. It uses a dictionary to create a list of phrases that can connect with certain words. The end result is text that follows in a similar style to the given text with varying degrees of randomness. They key is based on a tuple of an N-value size provided by the user. Program is based on idea from a Stanford assignment. 
