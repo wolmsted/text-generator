@@ -34,13 +34,11 @@ def createDict(nvalue, wordList):
 	for index, val in enumerate(wordList):
 		tupleKey = ()
 		valueList = []
-		ncount = 0
-		while ncount < nvalue - 1:
+		for ncount in range(0, nvalue - 1):
 			if (index + ncount >= len(wordList)):
 				tupleKey += (wordList[index + ncount - len(wordList)],) # string converted to tuple
 			else:
 				tupleKey += (wordList[index + ncount],)
-			ncount += 1
 		if dictionary.has_key(tupleKey):
 			valueList = dictionary.get(tupleKey)
 		if (index + nvalue - 1 >= len(wordList)):
@@ -54,7 +52,7 @@ def createDict(nvalue, wordList):
 def displayText(nvalue, wordCount, dictionary):
 	currKey = random.choice(dictionary.keys())
 	ncount = 0
-	while (ncount <= wordCount - (nvalue - 1)):
+	for ncount in range(0, wordCount - (nvalue - 1) + 1):
 		if ncount == 0:
 			string = ' '.join(map(str, currKey))
 			print "... " + string,
@@ -68,7 +66,6 @@ def displayText(nvalue, wordCount, dictionary):
 				tupleAsList.append(value[0])
 			print tupleAsList[len(tupleAsList) - 1],
 			currKey = tuple(tupleAsList)
-		ncount += 1
 	print(" ...")
 
 # repeats the process until the user wants to quit
